@@ -1,0 +1,18 @@
+﻿{
+  "include": [
+    "src/**/*.ts"
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2015", "dom"],
+    "module": "none",
+    "outFile": "./data/modules/build/index.js",
+    "rootDir": "./src",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "6.0"
+  }
+}
