@@ -1,14 +1,8 @@
 FROM registry.heroiclabs.com/heroiclabs/nakama:3.22.0
 
-ENTRYPOINT ["sh", "-c"]
-
 ENV PORT=7350
 
-CMD ["/bin/sh", "-ec", "\
-echo 'DB='\"$DATABASE_URL\" && \
-/nakama/nakama migrate up --database.address \"$DATABASE_URL\" && \
-exec /nakama/nakama \
---name nakama1 \
---database.address \"$DATABASE_URL\" \
---runtime.path /nakama/data/modules/build \
---logger.level INFO"]
+CMD ["/nakama/nakama", \
+"--name", "nakama1", \
+"--database.address", "postgresql://lila_mf2r_user:GOv9pifmyjvawIAYU9JyXDSP1DZCqmwe@dpg-d7h22prbc2fs738nnu7g-a.oregon-postgres.render.com:5432/lila_mf2r?sslmode=require", \
+"--logger.level", "DEBUG"]
