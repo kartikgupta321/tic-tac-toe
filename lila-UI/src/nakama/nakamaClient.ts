@@ -2,10 +2,20 @@ import { Client, type Socket, type Session } from "@heroiclabs/nakama-js";
 
 const client = new Client(
   "defaultkey",
-  "127.0.0.1",
-  "7350",
-  false
+  "tic-tac-toe-9wut.onrender.com",
+  "443",
+  true
 );
+
+// for local and remove createClient true
+// const client = new Client(
+//   "defaultkey",
+//   "127.0.0.1",
+//   "7350",
+//   false
+// );
+
+
 
 let socket: Socket;
 let session: Session; 
@@ -31,7 +41,7 @@ export async function connectToNakama() {
     username
   );
 
-  socket = client.createSocket();
+  socket = client.createSocket(true);
   await socket.connect(session, true);
 
   console.log("connected to nakama");

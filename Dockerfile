@@ -1,6 +1,7 @@
 FROM registry.heroiclabs.com/heroiclabs/nakama:3.22.0
 
 ENV PORT=7350
+COPY ./Lila/data/modules/build /nakama/data/modules
 
 ENTRYPOINT ["/bin/sh", "-ec"]
 
